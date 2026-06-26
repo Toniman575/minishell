@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/12 12:00:33 by asadik            #+#    #+#             */
+/*   Updated: 2025/10/12 12:50:30 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
+#include <unistd.h>
 
-int	main(void)
+/// @brief Writes a character to the given filedescriptor.
+/// @param c the character to be written.
+/// @param fd the filedescriptor written to.
+void	ft_putchar_fd(char c, int fd)
 {
-	t_state	state;
-
-	state.symbols = NULL;
+	write(fd, &c, 1);
 }

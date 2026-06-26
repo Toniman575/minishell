@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/14 11:07:09 by asadik            #+#    #+#             */
+/*   Updated: 2026/01/05 10:18:12 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_lstadd_front(t_list **lst, t_list *add)
 {
-	t_state	state;
-
-	state.symbols = NULL;
+	add->next = *lst;
+	*lst = add;
 }

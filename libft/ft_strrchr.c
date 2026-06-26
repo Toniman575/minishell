@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/01 14:30:14 by asadik            #+#    #+#             */
+/*   Updated: 2025/10/16 14:42:09 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
-
-int	main(void)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_state	state;
+	char	*cr;
+	char	cc;
 
-	state.symbols = NULL;
+	cr = 0;
+	cc = (char) c;
+	while (*s != '\0')
+	{
+		if (*s == cc)
+			cr = (char *)s;
+		s++;
+	}
+	if (cc == '\0')
+		return ((char *)s);
+	return (cr);
 }

@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/01 10:06:41 by asadik            #+#    #+#             */
+/*   Updated: 2025/10/14 15:29:33 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
+#include <string.h>
 
-int	main(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	t_state	state;
+	size_t		i;
+	char		*d;
+	char const	*s;
 
-	state.symbols = NULL;
+	d = dest;
+	s = src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }

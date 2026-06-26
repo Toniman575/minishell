@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/05 16:00:00 by asadik            #+#    #+#             */
+/*   Updated: 2025/10/16 10:19:43 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
+#include <stdlib.h>
+#include "libft.h"
+#include <stdint.h>
 
-int	main(void)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_state	state;
+	void	*a;
 
-	state.symbols = NULL;
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	if (SIZE_MAX / nmemb < size)
+		return (0);
+	a = malloc(nmemb * size);
+	if (a == NULL)
+		return (0);
+	ft_bzero(a, nmemb * size);
+	return (a);
 }

@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error_handling.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2026/03/17 09:05:19 by asadik            #+#    #+#             */
+/*   Updated: 2026/06/26 14:38:54 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
+#ifndef ERROR_HANDLING_H
+# define ERROR_HANDLING_H
 
-int	main(void)
+typedef enum e_rtype
 {
-	t_state	state;
+	ERROR,
+	INT,
+}	t_rtype;
 
-	state.symbols = NULL;
-}
+typedef union u_rreturn
+{
+	char	*error;
+	int		n;
+}	t_rreturn;
+
+typedef struct s_result
+{
+	t_rtype		type;
+	t_rreturn	value;
+}	t_result;
+
+#endif

@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   execution.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2026/06/26 11:39:40 by asadik            #+#    #+#             */
+/*   Updated: 2026/06/26 15:20:37 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "utils.h"
+#include <unistd.h>
+#include "../utils.h"
+#include "../libft/libft.h"
 
-int	main(void)
+void	bla(t_state *state)
 {
-	t_state	state;
+	char			**argv;
+	int				commands_n;
+	t_symbol_lst	*current;
 
-	state.symbols = NULL;
+	current = *state->symbols;
+	while (current->next)
+		current = current->next;
+	if (current->type == COMMAND)
+	{
+		if (ft_strncmp(current->value.command.name, "ls", 2))
+		{
+			execve();
+		}
+	}
 }

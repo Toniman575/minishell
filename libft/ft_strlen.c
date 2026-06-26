@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 13:53:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/09/29 16:04:54 by asadik            #+#    #+#             */
+/*   Updated: 2025/10/16 10:36:16 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "utils.h"
 
-int	main(void)
+/// Returns length of a string, including '\0'.
+/// Given string must me null-terminated to avoid undefined behaviour.
+size_t	ft_strlen(const char *s)
 {
-	t_state	state;
+	size_t	len;
 
-	state.symbols = NULL;
+	len = 0;
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
 }
