@@ -6,11 +6,14 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 14:26:51 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/26 14:03:14 by asadik           ###   ########.fr       */
+/*   Updated: 2026/06/29 14:18:26 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef enum e_tokentype
+#ifndef UTILS_H
+# define UTILS_H
+
+typedef enum e_symbol_type
 {
 	COMMAND,
 	REDIRECTION,
@@ -45,4 +48,7 @@ typedef struct s_symbol_lst
 typedef struct s_state
 {
 	t_symbol_lst	**symbols;
+	char			**envp;
 }		t_state;
+
+#endif
