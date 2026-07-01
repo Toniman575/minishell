@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.h                                   :+:      :+:    :+:   */
+/*   hashmap.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/17 09:05:19 by asadik            #+#    #+#             */
-/*   Updated: 2026/08/03 10:09:45 by asadik           ###   ########.fr       */
+/*   Created: 2026/06/29 15:50:26 by asadik            #+#    #+#             */
+/*   Updated: 2026/07/29 14:45:25 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_HANDLING_H
-# define ERROR_HANDLING_H
+#ifndef HASHMAP_H
+# define HASHMAP_H
 
-typedef enum e_rtype
+# include "../libft/libft.h"
+
+typedef struct s_node
 {
-	ERROR,
-	INT,
-	STRING,
-}	t_rtype;
+	char		*key;
+	char		*value;
+}		t_node;
 
-typedef union u_rreturn
+typedef struct s_hashmap
 {
-	char	*error;
-	char	*string;
-	int		n;
-}	t_rreturn;
-
-typedef struct s_result
-{
-	t_rtype		type;
-	t_rreturn	value;
-}	t_result;
-
-t_result	result_string(char *string);
-t_result	result_error(char *string);
-
+	int			bucket_n;
+	int			base_hash;
+	t_list		*hashmap[211];
+}		t_hashmap;
 #endif

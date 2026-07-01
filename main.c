@@ -6,10 +6,11 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 14:05:17 by asadik            #+#    #+#             */
-/*   Updated: 2026/06/29 14:17:50 by asadik           ###   ########.fr       */
+/*   Updated: 2026/06/29 14:29:25 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "utils.h"
 #include "execution/execution.h"
@@ -20,6 +21,8 @@ int	main(int argc, char **argv, char **envp)
 
 	(void)argc;
 	(void)argv;
+	for (char **env = envp; *env; env++)
+		printf("%s\n", *env);
 	state.symbols = malloc(sizeof(t_symbol_lst *));
 	*state.symbols = malloc(sizeof(t_symbol_lst));
 	t_symbol_lst *test = *state.symbols;

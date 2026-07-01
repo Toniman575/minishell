@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.h                                   :+:      :+:    :+:   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/17 09:05:19 by asadik            #+#    #+#             */
-/*   Updated: 2026/08/03 10:09:45 by asadik           ###   ########.fr       */
+/*   Created: 2026/08/03 09:57:51 by asadik            #+#    #+#             */
+/*   Updated: 2026/08/03 10:11:55 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_HANDLING_H
-# define ERROR_HANDLING_H
+#include "error_handling.h"
 
-typedef enum e_rtype
+t_result	result_string(char *string)
 {
-	ERROR,
-	INT,
-	STRING,
-}	t_rtype;
+	t_result	result;
 
-typedef union u_rreturn
+	result.type = STRING;
+	result.value.string = string;
+	return (result);
+}
+
+t_result	result_error(char *string)
 {
-	char	*error;
-	char	*string;
-	int		n;
-}	t_rreturn;
+	t_result	result;
 
-typedef struct s_result
-{
-	t_rtype		type;
-	t_rreturn	value;
-}	t_result;
-
-t_result	result_string(char *string);
-t_result	result_error(char *string);
-
-#endif
+	result.type = ERROR;
+	result.value.error = string;
+	return (result);
+}
